@@ -9,6 +9,8 @@ class Service extends Model
 {
     /** @use HasFactory<\Database\Factories\ServiceFactory> */
     use HasFactory;
+    
+    protected $fillable = ['name', 'description'];
 
     public function services() {
     return $this->belongsToMany(Service::class)->withPivot('role');

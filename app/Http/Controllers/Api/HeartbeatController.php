@@ -10,20 +10,22 @@ class HeartbeatController extends Controller
 {
     public function store(Request $request)
     {
-        // Validamos que los datos vengan correctos
+  
         $validated = $request->validate([
-            'device_name' => 'required|string',
-            'cpu_usage'   => 'required|numeric',
-            'ram_usage'   => 'required|numeric',
-            'status'      => 'required|string',
+            'service_id' => 'required|exists:services,id',
+            'status'     => 'required|string|max:255',
+            'metrics'    => 'nullable|array' 
         ]);
 
-        // Creamos el registro
-        $heartbeat = Heartbeat::create($validated);
+        $heartbeat = Heartbeat::create([
+            'service_id'         => $validated['service_id'],
+            'status'             => $validated['status'],
+            'additional_metrics' => $validated['metrics'],
+        ]);
 
         return response()->json([
             'message' => 'Latido recibido con éxito',
-            'data' => $heartbeat
+            'data'    => $heartbeat
         ], 201);
     }
 }

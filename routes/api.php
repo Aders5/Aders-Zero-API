@@ -8,4 +8,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::post('/heartbeat', [HeartbeatController::class, 'store']);
+Route::post('/heartbeats', [HeartbeatController::class, 'store']);
