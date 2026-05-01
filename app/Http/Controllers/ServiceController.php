@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use OpenApi\Attributes as OA;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
+
+#[OA\Info(title: "Aders-Zero-API", version: "1.0.0")]
 class ServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+    #[OA\Get(path: "/api/test", responses: [new OA\Response(response: 200, description: "OK")])]
     public function index()
     {
         //
