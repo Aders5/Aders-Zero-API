@@ -18,7 +18,6 @@ class AlertDevicesTable extends Component
 
     public function isCritical($pulse)
     {
-        // 3. Tu lógica de temperatura y error es correcta, mantenla
         return $pulse->status === 'error';
     }
 
