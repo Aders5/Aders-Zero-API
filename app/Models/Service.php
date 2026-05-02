@@ -15,4 +15,8 @@ class Service extends Model
     public function services() {
     return $this->belongsToMany(Service::class)->withPivot('role');
     }
+
+    public function heartbeats() {
+    return $this->hasMany(Heartbeat::class);
+    }
 }

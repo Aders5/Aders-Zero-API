@@ -9,5 +9,8 @@ class Heartbeat extends Model
     protected $fillable = ['service_id', 'status', 'additional_metrics'];
 
     protected $casts = ['additional_metrics' => 'array'];
-  
+
+    public function service(){
+    return $this->belongsTo(Service::class);
+    }
 }

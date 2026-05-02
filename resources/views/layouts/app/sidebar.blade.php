@@ -17,7 +17,7 @@
                     </flux:sidebar.item>
 
                     <flux:sidebar.item icon="chart-bar" :href="route('monitor')" :current="request()->routeIs('monitor')" wire:navigate>
-                    Monitor ENA-300
+                    Devices Monitor
                     </flux:sidebar.item>
                 </flux:sidebar.group>
             </flux:sidebar.nav>

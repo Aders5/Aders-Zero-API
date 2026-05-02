@@ -18,7 +18,8 @@ class ServiceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->randomElement(['Rassberry PI 5', 'espressif esp32', 'Server_1', 'Server_2', 'Server_3']),
+            'description' => $this->faker->sentence(),
         ];
     }
 }
