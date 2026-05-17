@@ -22,9 +22,9 @@ class AlertDevicesTable extends Component
     }
 
     public function isOverheating($pulse): bool 
-{
+    {
     return ($pulse->additional_metrics['temp_c'] ?? 0) >= 80; 
-}
+    }
 
 
     /**
